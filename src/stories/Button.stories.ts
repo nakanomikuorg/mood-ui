@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
 	args: {
-		label: '按钮',
+		label: 'Label',
 		types: 'primary',
 		size: 'md'
 	}
@@ -33,7 +33,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
 	args: {
-		label: '按钮',
+		label: 'Label',
 		types: 'secondary',
 		size: 'md'
 	}
@@ -41,7 +41,7 @@ export const Secondary: Story = {
 
 export const Tertiary: Story = {
 	args: {
-		label: '按钮',
+		label: 'Label',
 		types: 'tertiary',
 		size: 'md'
 	}
@@ -49,7 +49,7 @@ export const Tertiary: Story = {
 
 export const Ghost: Story = {
 	args: {
-		label: '按钮',
+		label: 'Label',
 		types: 'ghost',
 		size: 'md'
 	}
@@ -57,7 +57,7 @@ export const Ghost: Story = {
 
 export const Danger: Story = {
 	args: {
-		label: '按钮',
+		label: 'Label',
 		types: 'danger',
 		size: 'md'
 	}
@@ -65,7 +65,7 @@ export const Danger: Story = {
 
 export const Gradient: Story = {
 	args: {
-		label: '按钮',
+		label: 'Label',
 		types: 'gradient',
 		size: 'md'
 	}

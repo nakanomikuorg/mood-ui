@@ -42,7 +42,7 @@
 		? `rounded-full ${
 				{
 					sm: 'px-4',
-					md: 'px-5',
+					md: 'pl-4 pr-6',
 					lg: 'px-6',
 					xl: 'px-7',
 					'2xl': 'px-8'
@@ -62,7 +62,7 @@
 		xl: 'py-3 text-base',
 		'2xl': 'py-4 text-base'
 	}[size];
-	$: styleClass = `relative ${bgColorClass} ${textColorClass} ${roundedClass} ${sizeClass}`;
+	$: styleClass = `flex items-center gap-2 tracking-[.1px] ${bgColorClass} ${textColorClass} ${roundedClass} ${sizeClass}`;
 
 	$: bgGradientStyle =
 		types == 'gradient'
@@ -75,5 +75,8 @@
 </script>
 
 <button class={styleClass} on:click {style} type="button">
-	{label}
+	<slot name="icon" />
+	<div class="pl-2">
+		{label}
+	</div>
 </button>

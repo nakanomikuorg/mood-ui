@@ -1,6 +1,6 @@
-// import defaultTheme from "tailwindcss/defaultTheme";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
-/** @type {import("tailwindcss").Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{svelte,js,ts,jsx,tsx}'],
 	darkMode: ['class', '[data-mode="dark"]'],
@@ -66,12 +66,10 @@ export default {
 				surfaceContainerLowest: 'rgb(var(--md-sys-color-surface-container-lowest) / <alpha-value>)',
 				surfaceBright: 'rgb(var(--md-sys-color-surface-bright) / <alpha-value>)',
 				surfaceDim: 'rgb(var(--md-sys-color-surface-dim) / <alpha-value>)'
+			},
+			fontFamily: {
+				sans: ['HarmonyOS Sans SC', 'Roboto', 'Segoe UI Emoji', ...defaultTheme.fontFamily.sans]
 			}
-			// fontFamily: {
-			//     sans: [
-			//         ...defaultTheme.fontFamily.sans,
-			//     ],
-			// },
 		}
 	},
 	plugins: []
