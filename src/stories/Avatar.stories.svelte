@@ -11,6 +11,10 @@
 			types: {
 				control: { type: 'select' },
 				options: ['img', 'icon', 'text']
+			},
+			size: {
+				control: { type: 'select' },
+				options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl']
 			}
 		}
 	} satisfies Meta<Avatar>;
@@ -31,13 +35,14 @@
 	args={{
 		src: avatar,
 		types: 'img',
-		alt: 'avatar'
+		alt: 'avatar',
+		size: 'md'
 	}}
 ></Story>
 
-<Story name="Icon" args={{ types: 'icon' }}>
+<Story name="Icon">
 	<Avatar types="icon">
-		<Icon data={user} size="32px" stroke="transparent"></Icon>
+		<Icon data={user} size="20px" stroke="transparent"></Icon>
 	</Avatar>
 </Story>
 
@@ -45,6 +50,7 @@
 	name="Text"
 	args={{
 		label: 'MD',
-		types: 'text'
+		types: 'text',
+		size: 'md'
 	}}
 ></Story>
