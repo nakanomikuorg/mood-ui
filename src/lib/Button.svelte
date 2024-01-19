@@ -4,6 +4,9 @@
 	 */
 	export let types: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' | 'gradient' =
 		'primary';
+	/**
+	 * 按钮是否是圆角
+	 */
 	export let round: boolean = true;
 	/**
 	 * 按钮的背景颜色

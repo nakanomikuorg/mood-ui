@@ -55,6 +55,8 @@
 		--md-sys-color-surface-container: 242 236 244;
 		--md-sys-color-surface-container-high: 237 230 238;
 		--md-sys-color-surface-container-highest: 231 224 232;
+		--wb: 255 255 255;
+		--g: linear-gradient(180deg, #fdfbfb 0%, #ebedee 100%);
 	}
 
 	html[data-theme='dark'] {
@@ -107,6 +109,8 @@
 		--md-sys-color-surface-container: 33 31 36;
 		--md-sys-color-surface-container-high: 44 41 47;
 		--md-sys-color-surface-container-highest: 54 52 58;
+		--wb: 0 0 0;
+		--g: linear-gradient(180deg, #434343 0%, #000 100%);
 	}
 
 	html {

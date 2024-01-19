@@ -23,7 +23,7 @@
 <script lang="ts">
 	import { Story, Template } from '@storybook/addon-svelte-csf';
 	import { Icon } from 'svelte-icon';
-	import user from '@mdi/svg/svg/account-outline.svg?raw';
+	import accountOutline from '@mdi/svg/svg/account-outline.svg?raw';
 </script>
 
 <Template let:args>
@@ -42,7 +42,7 @@
 
 <Story name="Icon">
 	<Avatar types="icon">
-		<Icon data={user} size="20px" stroke="transparent"></Icon>
+		<Icon data={accountOutline} size="20px" stroke="transparent"></Icon>
 	</Avatar>
 </Story>
 

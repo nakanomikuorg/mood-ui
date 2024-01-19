@@ -65,7 +65,8 @@ export default {
 				surfaceContainerLow: 'rgb(var(--md-sys-color-surface-container-low) / <alpha-value>)',
 				surfaceContainerLowest: 'rgb(var(--md-sys-color-surface-container-lowest) / <alpha-value>)',
 				surfaceBright: 'rgb(var(--md-sys-color-surface-bright) / <alpha-value>)',
-				surfaceDim: 'rgb(var(--md-sys-color-surface-dim) / <alpha-value>)'
+				surfaceDim: 'rgb(var(--md-sys-color-surface-dim) / <alpha-value>)',
+				wb: 'rgb(var(--wb) / <alpha-value>)'
 			},
 			fontFamily: {
 				sans: ['HarmonyOS Sans SC', 'Roboto', 'Segoe UI Emoji', ...defaultTheme.fontFamily.sans]
