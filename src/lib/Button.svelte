@@ -12,6 +12,8 @@
 	 * 按钮的背景颜色
 	 */
 	export let backgroundColor: string | undefined = undefined;
+	export let backgroundColorClass: string | undefined = undefined;
+	export let textColorClass: string | undefined = undefined;
 	/**
 	 * 按钮的背景渐变
 	 */
@@ -25,22 +27,26 @@
 	 */
 	export let label: string = '';
 
-	$: bgColorClass = {
-		primary: 'bg-primary',
-		secondary: 'bg-secondary',
-		tertiary: 'border-solid border border-outline',
-		ghost: '',
-		danger: 'bg-error',
-		gradient: 'shadow'
-	}[types];
-	$: textColorClass = {
-		primary: 'text-onPrimary',
-		secondary: 'text-onSecondary',
-		tertiary: 'text-primary',
-		ghost: 'text-primary',
-		danger: 'text-onError',
-		gradient: 'text-white'
-	}[types];
+	$: bgColorClass = backgroundColorClass
+		? backgroundColorClass
+		: {
+				primary: 'bg-primary',
+				secondary: 'bg-secondary',
+				tertiary: 'border-solid border border-outline',
+				ghost: '',
+				danger: 'bg-error',
+				gradient: 'shadow'
+			}[types];
+	$: textColorClass = textColorClass
+		? textColorClass
+		: {
+				primary: 'text-onPrimary',
+				secondary: 'text-onSecondary',
+				tertiary: 'text-primary',
+				ghost: 'text-primary',
+				danger: 'text-onError',
+				gradient: 'text-white'
+			}[types];
 	$: roundedClass = round
 		? `rounded-full ${
 				{
@@ -65,7 +71,7 @@
 		xl: 'py-3 text-base',
 		'2xl': 'py-4 text-base'
 	}[size];
-	$: styleClass = `flex items-center gap-2 tracking-[.1px] ${bgColorClass} ${textColorClass} ${roundedClass} ${sizeClass}`;
+	$: styleClass = `flex shrink-0 items-center tracking-[.1px] whitespace-nowrap ${bgColorClass} ${textColorClass} ${roundedClass} ${sizeClass}`;
 
 	$: bgGradientStyle =
 		types == 'gradient'
