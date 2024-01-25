@@ -30,16 +30,31 @@
 </Template>
 
 <Story
-	name="Text"
+	name="Medium Text"
 	args={{
-		label: 'M',
+		label: 'K',
 		types: 'text',
 		size: 'md'
 	}}
 ></Story>
 
-<Story name="Icon">
+<Story name="Medium Icon">
 	<Key types="icon">
 		<Icon data={appleKeyboardCommand} size="24px" stroke="transparent"></Icon>
+	</Key>
+</Story>
+
+<Story
+	name="Small Text"
+	args={{
+		label: 'K',
+		types: 'text',
+		size: 'sm'
+	}}
+></Story>
+
+<Story name="Small Icon">
+	<Key types="icon" size="sm">
+		<Icon data={appleKeyboardCommand} size="8px" stroke="transparent"></Icon>
 	</Key>
 </Story>

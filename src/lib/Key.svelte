@@ -13,13 +13,20 @@
 	 * 按钮的大小
 	 */
 	export let size: 'sm' | 'md' = 'md';
+
+	$: outerClass = {
+		sm: 'w-5 h-5 rounded shadow',
+		md: 'w-16 h-16 rounded-[13px] border border-solid border-primary'
+	}[size];
+	$: innerClass = {
+		sm: 'w-4 h-3.5 top-0.5 left-0.5 text-[10px] rounded-sm',
+		md: 'w-[55px] h-[49px] rounded-lg top-[3.5px] left-[3.5px] border border-solid border-wb text-2xl'
+	}[size];
 </script>
 
-<div
-	class="w-16 h-16 bg-primaryContainer rounded-[13px] border border-solid border-primary relative"
->
+<div class={`bg-primaryContainer relative ${outerClass}`}>
 	<div
-		class="w-[55px] h-[49px] rounded-[7px] absolute top-[3.5px] left-[3.5px] border border-solid border-wb text-2xl flex justify-center items-center text-primary"
+		class={`absolute flex justify-center items-center text-primary ${innerClass}`}
 		style="background-image: var(--g);"
 	>
 		{#if types === 'icon'}

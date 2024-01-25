@@ -1,19 +1,6 @@
 {
-	"name": "mood-ui",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"test:integration": "playwright test",
-		"test:unit": "vitest"
+	"dependencies": {
+		"@mdi/svg": "^7.4.47"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
@@ -26,6 +13,9 @@
 		"@storybook/svelte": "^7.6.9",
 		"@storybook/svelte-vite": "^7.6.9",
 		"@storybook/test": "^7.6.9",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.1",
 		"@tsconfig/svelte": "^5.0.2",
 		"@types/eslint": "8.56.0",
@@ -42,18 +32,48 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"storybook": "^7.6.9",
-		"svelte": "^4.2.8",
 		"svelte-check": "^3.6.2",
 		"svelte-icon": "^2.0.0",
 		"tailwindcss": "^3.4.1",
 		"tslib": "^2.6.2",
 		"typescript": "^5.2.2",
-		"vite": "^5.0.8",
+		"vite": "5.1.0-beta.0",
 		"vitest": "^1.2.0"
 	},
-	"dependencies": {
-		"@mdi/svg": "^7.4.47",
-		"svelte-smooth-corners": "^1.0.2",
-		"svercle": "^0.1.1"
-	}
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"name": "mood-ui",
+	"peerDependencies": {
+		"svelte": "^4.2.8"
+	},
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run package",
+		"test": "npm run test:integration && npm run test:unit",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"test:integration": "playwright test",
+		"test:unit": "vitest",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"svelte": "./dist/index.js",
+	"type": "module",
+	"types": "./dist/index.d.ts",
+	"version": "0.0.0"
 }

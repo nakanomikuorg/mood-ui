@@ -31,7 +31,7 @@
 		tertiary: 'border-solid border border-outline',
 		ghost: '',
 		danger: 'bg-error',
-		gradient: ''
+		gradient: 'shadow'
 	}[types];
 	$: textColorClass = {
 		primary: 'text-onPrimary',
